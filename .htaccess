@@ -1,0 +1,24 @@
+
+php_flag display_errors Off
+php_flag log_errors On
+
+RewriteEngine On
+Options -MultiViews
+
+# Keep PHP implementation details out of local and production browser addresses.
+RewriteCond %{REQUEST_METHOD} !POST [NC]
+RewriteCond %{REQUEST_URI} \.php$ [NC]
+RewriteCond %{HTTP_HOST} ^(localhost|127\.0\.0\.1)(:[0-9]+)?$ [NC]
+RewriteRule ^(.+)\.php$ /OnlineShop/$1 [R=302,L,QSA,NC]
+
+RewriteCond %{REQUEST_METHOD} !POST [NC]
+RewriteCond %{REQUEST_URI} \.php$ [NC]
+RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1)(:[0-9]+)?$ [NC]
+RewriteRule ^(.+)\.php$ /$1 [R=302,L,QSA,NC]
+
+# Allow extension-free storefront and admin URLs to resolve to PHP files.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [END]
+
+RewriteRule ^(faq|returns|contact|privacy|about|shipping)/?$ site_page.php?slug=$1 [END,QSA,NC]

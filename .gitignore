@@ -1,0 +1,15 @@
+# Dependencies and environment secrets
+.env
+.env.*
+*.env
+
+# Database dumps, packages, and backups
+*.sql
+*.zip
+*.bak
+*.tmp
+/admin/backups/
+
+# Local/runtime files
+*.log
+.sass-cache/
