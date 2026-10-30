@@ -237,6 +237,255 @@ Before public deployment, complete the following:
 7. Enable HTTPS and set secure session cookies on the production host.
 8. Review server uploads for file-type, size, and name restrictions.
 
+## System Design and Workflow
+
+### UML Use-Case Overview
+
+```mermaid
+flowchart LR
+    Customer((Customer)) --> Browse[Browse products and categories]
+    Customer --> Search[Search products]
+    Customer --> Account[Register and sign in]
+    Customer --> Cart[Manage cart and wishlist]
+    Customer --> Checkout[Checkout and choose payment]
+    Customer --> Orders[View order history and status]
+    Customer --> Review[Submit reviews and ratings]
+
+    Staff((Staff / Seller)) --> StaffLogin[Sign in to administration]
+    Staff --> POS[Complete in-person sales]
+    Staff --> Confirm[Confirm pending orders]
+    Staff --> Inventory[Update and monitor inventory]
+    Staff --> Invoice[View and download invoices]
+
+    Admin((Administrator)) --> Catalog[Manage products, brands, and categories]
+    Admin --> Users[Manage customers and staff]
+    Admin --> OrdersAdmin[Process and record orders]
+    Admin --> Payments[Manage payments and refunds]
+    Admin --> Reports[View staff and sales reports]
+    Admin --> Settings[Configure shop, shipping, tax, and payments]
+    Admin --> Backup[Create backups and restore data]
+
+    SuperAdmin((Super Administrator)) --> Admin
+```
+
+### System Architecture
+
+```mermaid
+flowchart TB
+    Browser[Web Browser / Mobile Browser]
+    Apache[Apache + mod_rewrite]
+
+    subgraph Presentation[Presentation Layer]
+        Store[Storefront Pages]
+        Login[Login and Registration]
+        Dashboard[Administration Dashboard]
+        POS[Staff Point of Sale]
+        Reports[Staff Performance Reports]
+    end
+
+    subgraph Application[PHP Application Layer]
+        Auth[Session and Authentication]
+        CatalogApp[Catalog and Product Management]
+        CartApp[Cart, Wishlist, Checkout]
+        OrderApp[Orders, Payments, Invoices]
+        StockApp[Inventory and POS Processing]
+        ReportApp[Reporting and CSV Export]
+        BackupApp[Backup and Restore]
+    end
+
+    subgraph Data[Data Layer]
+        MySQL[(MySQL / MariaDB)]
+        Images[(Product Image Files)]
+    end
+
+    Browser --> Apache --> Presentation
+    Presentation --> Auth
+    Presentation --> CatalogApp
+    Presentation --> CartApp
+    Presentation --> OrderApp
+    Presentation --> StockApp
+    Presentation --> ReportApp
+    Presentation --> BackupApp
+    Auth --> MySQL
+    CatalogApp --> MySQL
+    CartApp --> MySQL
+    OrderApp --> MySQL
+    StockApp --> MySQL
+    ReportApp --> MySQL
+    BackupApp --> MySQL
+    CatalogApp --> Images
+```
+
+### Customer Checkout Sequence
+
+```mermaid
+sequenceDiagram
+    actor Customer
+    participant Store as Storefront
+    participant PHP as PHP Application
+    participant DB as MySQL / MariaDB
+    participant Staff as Staff / Payment System
+
+    Customer->>Store: Browse and select product
+    Store->>PHP: Add product to cart
+    PHP->>DB: Read product and stock
+    DB-->>PHP: Product and available quantity
+    PHP->>DB: Save cart item
+    Customer->>Store: Open checkout
+    Store->>PHP: Submit shipping and payment details
+    PHP->>DB: Validate stock and create order
+    DB-->>PHP: Order ID and totals
+    PHP->>DB: Save order items and payment state
+    PHP->>DB: Update stock and inventory log
+    PHP-->>Store: Display order success / invoice route
+    Staff->>Store: Review or confirm order
+    Store->>PHP: Update order status and staff attribution
+    PHP->>DB: Save confirmation and activity
+```
+
+### In-Person Sale Sequence
+
+```mermaid
+sequenceDiagram
+    actor Seller as Staff / Seller
+    participant POS as POS Interface
+    participant PHP as PHP Application
+    participant DB as MySQL / MariaDB
+    participant Reports as Staff Reports
+
+    Seller->>POS: Sign in and select product
+    POS->>PHP: Submit walk-in sale and payment
+    PHP->>DB: Lock and validate available stock
+    DB-->>PHP: Current stock and product price
+    PHP->>DB: Create delivered and paid order
+    PHP->>DB: Add order line, reduce stock, add inventory log
+    PHP-->>POS: Sale success and order number
+    Reports->>DB: Calculate daily, monthly, or yearly staff activity
+    DB-->>Reports: POS sales, confirmations, and totals
+```
+
+### Core Database Relationships
+
+```mermaid
+erDiagram
+    USER_INFO ||--o{ ORDERS_INFO : places
+    USER_INFO ||--o{ CART : owns
+    USER_INFO ||--o{ WISHLIST : owns
+    USER_INFO ||--o{ REVIEWS : writes
+
+    ADMIN_INFO ||--o{ INVENTORY_LOGS : performs
+    ADMIN_INFO ||--o{ SYSTEM_LOGS : generates
+
+    CATEGORIES ||--o{ PRODUCTS : groups
+    BRANDS ||--o{ PRODUCTS : identifies
+    PRODUCTS ||--o{ PRODUCT_IMAGES : has
+    PRODUCTS ||--o{ CART : listed_in
+    PRODUCTS ||--o{ WISHLIST : saved_in
+    PRODUCTS ||--o{ ORDER_PRODUCTS : sold_as
+    PRODUCTS ||--o{ REVIEWS : receives
+    PRODUCTS ||--o{ INVENTORY_LOGS : tracks
+
+    ORDERS_INFO ||--|{ ORDER_PRODUCTS : contains
+    ORDERS_INFO ||--o{ PAYMENTS : has
+    ORDERS_INFO ||--o{ INVOICES : generates
+    ORDERS_INFO ||--o{ REFUNDS : may_have
+
+    USER_INFO {
+        int user_id PK
+        string first_name
+        string email
+        string password
+    }
+    ADMIN_INFO {
+        int admin_id PK
+        string admin_name
+        string admin_email
+        string role
+        string permissions
+    }
+    PRODUCTS {
+        int product_id PK
+        string product_title
+        float product_price
+        int stock_quantity
+        string product_image
+    }
+    PRODUCT_IMAGES {
+        int image_id PK
+        int product_id FK
+        string image_name
+        int sort_order
+    }
+    ORDERS_INFO {
+        int order_id PK
+        int user_id FK
+        float total_amt
+        string payment_status
+        string order_status
+        string admin_notes
+    }
+    ORDER_PRODUCTS {
+        int order_pro_id PK
+        int order_id FK
+        int product_id FK
+        int qty
+        float amt
+    }
+    PAYMENTS {
+        int payment_id PK
+        int order_id FK
+        float amount
+        string status
+        string transaction_id
+    }
+```
+
+## Screenshots and System Workflow
+
+The following local screenshots show the current system interface.
+
+### 1. Storefront Catalog
+
+![Liberia Shop storefront catalog](docs/screenshots/storefront.png)
+
+The customer begins by opening the responsive homepage or storefront, browsing categories, searching for products, viewing promotions, and opening a product.
+
+### 2. Product Details and Gallery
+
+![Product details with gallery](docs/screenshots/product-details.png)
+
+The product page displays the product price, description, stock, image gallery, quantity controls, cart actions, and related or recommended products.
+
+### 3. Mobile Storefront
+
+![Mobile storefront interface](docs/screenshots/mobile-storefront.png)
+
+The mobile interface adapts the catalog and navigation for smaller screens and includes quick-access storefront navigation.
+
+### 4. Login Workflow
+
+![Administration login](docs/screenshots/admin-login.png)
+
+Customers use the shared login/registration workflow, while administrators and staff are authenticated through the administration system and directed by role.
+
+### 5. Administration Dashboard
+
+![Administration dashboard](docs/screenshots/admin-dashboard.png)
+
+After login, the administrator sees the dashboard, navigation sidebar, operational summaries, and links to catalog, orders, payments, users, staff, settings, and backups.
+
+### 6. In-Person Point of Sale
+
+![In-person POS workflow](docs/screenshots/pos-workflow.png)
+
+The staff seller selects a product, enters quantity and walk-in customer details, chooses a payment method, and completes the sale. The order is recorded, stock is reduced, and the staff member is attributed automatically.
+
+### 7. Staff Performance Reporting
+
+![Staff performance report](docs/screenshots/staff-report.png)
+
+Administrators filter staff activity by day, month, or year. Sales totals, in-person order counts, confirmed-order counts, account status, and last login are displayed and can be exported as CSV.
+
 ## Running Checks
 
 Run PHP syntax validation:
