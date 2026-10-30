@@ -1,122 +1,292 @@
-![GitHub](https://img.shields.io/github/license/puneethreddyhc/online-shopping-system-advanced)
-![](https://visitor-badge.glitch.me/badge?page_id=puneethreddyhc.onlineadv)
+﻿# Liberia Shop / TechShop Liberia
 
-<a href="https://www.buymeacoffee.com/puneethreddyhc" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="195" height="55"></a>
+[![Live Website](https://img.shields.io/badge/Live-liberia--shop--production-brightgreen)](https://lib-onlineshop.gt.tc)
+[![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?logo=php&logoColor=white)](https://www.php.net)
+[![MySQL](https://img.shields.io/badge/MySQL-MariaDB-4479A1?logo=mysql&logoColor=white)](https://mariadb.org)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-Admin%20%26%20Store-7952B3?logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 
-> ## Updated project with extra Features like WISHLIST, List Orders, add Reviews, updated routing, resolved search bug is available for Premium 
+TechShop Liberia, developed as **Liberia Shop**, is a responsive e-commerce and store-management platform for customers, administrators, and selling staff in Liberia. It supports online shopping, in-person sales, inventory control, payment recording, order processing, invoices, staff performance, and mobile storefront access.
 
-[![Youtube Video](https://img.youtube.com/vi/gLwfj67GI8A/0.jpg)](https://youtu.be/gLwfj67GI8A)
+- **Live site:** https://lib-onlineshop.gt.tc
+- **Repository:** https://github.com/Archie-ctr/Liberia-Shop
+- **Developer / owner:** Archie K Gonwoe Jr
+- **Contact:** archiekgonwoe@gmail.com
+- **GitHub:** https://github.com/Archie-ctr
 
-<h3>Things I code with</h3>
-<p>
-  <img alt="npm" src="https://img.shields.io/badge/-NPM-CB3837?style=flat-square&logo=npm&logoColor=white" />
-  <img alt="html5" src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/static/v1?label=Vue.js&amp;message=v2.6&amp;color=4FC08D&amp;style=flat-square&amp;logo=vue.js&amp;logoColor=ffffff" alt="vue.js">
-  <img alt="Django" src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white" />
-  <img alt="Flutter" src="https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white" />
-  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-323330?style=flat-square&logo=javascript&logoColor=F7DF1E" />
-  <img alt="Mysql" src="https://img.shields.io/badge/MySQL-00000F?style=flat-square&logo=mysql&logoColor=white" />
-  <img alt="postgresql" src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" />
-  <img alt="Amazon_AWS" src="https://img.shields.io/badge/Amazon_AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white" />
-  <img alt="Css" src="https://img.shields.io/badge/CSS-239120?&style=flat-square&logo=css3&logoColor=white" />
-  <img alt="Sass" src="https://img.shields.io/badge/-Sass-CC6699?style=flat-square&logo=sass&logoColor=white" />
-  <img alt="Styled Components" src="https://img.shields.io/badge/-Styled_Components-db7092?style=flat-square&logo=styled-components&logoColor=white" />
-  <img alt="git" src="https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white" />
-  <img alt="Heroku" src="https://img.shields.io/badge/-Heroku-430098?style=flat-square&logo=heroku&logoColor=white" />
-  <img alt="Docker" src="https://img.shields.io/badge/-Docker-46a2f1?style=flat-square&logo=docker&logoColor=white" />
-  <img alt="angular" src="https://img.shields.io/badge/-Angular-DD0031?style=flat-square&logo=angular&logoColor=white" />
-  <img alt="MongoDB" src="https://img.shields.io/badge/-MongoDB-13aa52?style=flat-square&logo=mongodb&logoColor=white" />
-  <img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=flat-square&logo=Node.js&logoColor=white" />
-  <img alt="Google Cloud Platform" src="https://img.shields.io/badge/-Google_Cloud_Platform-1a73e8?style=flat-square&logo=google-cloud&logoColor=white" />
-  <img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" />
-  
-</p>
-<h1>Projects We develop</h1>
+## Current System Interface
 
-<ul>
-	<li><b>Vue JS</b></li>
-	<li><b>Nuxt JS</b></li>
-	<li><b>Python</b></li>
-	<li><b>Django</b></li>
-	<li><b>PHP and MYSQL</b></li>
-	<li><b>Angular JS</b></li>
-	<li><b>React JS</b></li>
-	<li><b>AI/ML</b></li>
-</ul>
-<h2> Projects with installation support and code explaination for Premium contact gmail: puneethreddy951@gmail.com or visit :<a href="http://www.projectswall.com/">Projects Wall</a></h2>
+### Storefront
 
-# Installation
+- Responsive homepage, product catalog, category browsing, search, and product details
+- Multiple product images with storefront gallery thumbnails
+- Shopping cart and wishlist
+- Customer registration and login
+- Checkout and payment-method selection
+- Customer order history and order status
+- Product reviews and ratings
+- Liberia-focused footer, shop information, contact details, and social links
+- Mobile navigation and bottom-tab storefront controls
+- Extension-free web addresses such as `/store`, `/faq`, and `/product`
+- Dynamic pricing through the system currency configuration
 
-1. Install XAMPP or WAMPP.
+### Customer Information Pages
 
-2. Open XAMPP Control panal and start [apache] and [mysql] .
+- About Us
+- Contact Us
+- Frequently Asked Questions
+- Shipping Policy
+- Returns and Refunds
+- Privacy Policy
 
-3. Download project from github(https://github.com/PuneethReddyHC/online-shopping-system-with-advanced-admin-page.git)  
-    OR follow gitbash commands
-    
-    i>cd C:\\xampp\htdocs\
-    
-    ii>git clone https://github.com/PuneethReddyHC/online-shopping-system-with-advanced-admin-page.git
-    
-4. extract files in C:\\xampp\htdocs\.
+### Administration Dashboard
 
-5. open link localhost/phpmyadmin
+- Overview dashboard for orders, customers, products, revenue, and system activity
+- Compact modal-based product creation and editing
+- Category, brand, product, and inventory management
+- Product gallery image uploads and removal
+- Electronics and catalog management
+- Customer and user management
+- Pending, completed, and cancelled order views
+- Invoice generation and PDF download
+- Payment management and payment-status synchronization
+- Store banners, promotions, coupons, and blog content
+- Shop settings, payment settings, shipping settings, and tax settings
+- Backup creation, settings, history, and restore tools
+- Support tickets and system logs
+- Responsive sidebar for mobile and tablet administration
 
-6. click on new at side navbar.
+### Staff / Seller Features
 
-7. give a database name as (onlineshop) hit on create button.
+- Staff accounts with editor/seller roles and account activation controls
+- Shared secure login experience for administrators, staff, and customers
+- In-person point-of-sale (POS) workflow
+- Walk-in customer name, phone number, product, quantity, and payment-method entry
+- Cash, mobile-money, and card sale recording
+- Automatic order creation, inventory reduction, and inventory logging
+- Pending-order confirmation with staff attribution
+- Staff reports for daily, monthly, and yearly periods
+- Sales revenue, sales-order counts, confirmations, account status, and last-login reporting
+- CSV export for staff performance data
 
-8. after creating database name click on import.
+## Roles
 
-9. browse the file in directory[online-shopping-system-with-advanced-admin-page/database/onlineshop.sql].
+| Role | Access |
+|---|---|
+| Super administrator | Full system administration |
+| Administrator | Dashboard, catalog, orders, payments, reports, staff management, and settings |
+| Editor / staff seller | Selling, product inventory access according to permissions, POS sales, invoices, and permitted order operations |
+| Customer | Catalog, cart, wishlist, checkout, reviews, and personal orders |
 
-10. after importing successfully.
+## Technology Stack
 
-11. open any browser and type http://localhost/online-shopping-system-with-advanced-admin-page-master.
+- **Backend:** PHP 8
+- **Database:** MySQL / MariaDB
+- **Frontend:** HTML5, CSS3, JavaScript, Bootstrap, jQuery
+- **Server:** Apache with `.htaccess` clean URLs
+- **Icons:** Material Icons and Font Awesome
+- **Payments:** Cash, mobile money, and configured payment integrations/display options
+- **Hosting:** InfinityFree-compatible production setup
+- **Reporting:** Server-side PHP and MySQL with CSV export
 
-12. first register and then login
+## Project Structure
 
-13. admin login details  Email=admin@gmail.com or username = admin and Password=123456789.
+```text
+OnlineShop/
+├── admin/
+│   ├── login.php                 # Shared login form
+│   ├── server/                   # Legacy and server-side authentication handlers
+│   └── admin/                    # Administration dashboard and staff tools
+├── css/                          # Storefront styles and mobile responsive rules
+├── js/                           # Storefront JavaScript
+├── img/                          # Store graphics and interface assets
+├── fonts/                        # Store fonts
+├── product_images/               # Product and gallery images
+├── db.php                        # Local/production database connection
+├── .htaccess                     # Clean URL routing and PHP extension handling
+├── index.php                     # Storefront entry point
+├── store.php                     # Store/product listing
+├── product.php                   # Product details and image gallery
+├── login.php                     # Shared authentication processing
+├── checkout.php                  # Checkout interface
+├── action.php                    # Cart, wishlist, checkout, and AJAX operations
+└── site_page.php                 # Information page routing
+```
 
-## If you like my project 
-Bye me Cup of coffee
+## Local Installation
 
+### Requirements
 
-## visit my other repository with different admin pages with below link
-https://github.com/PuneethReddyHC/online-shopping-system-advanced
+- Windows, Linux, or macOS
+- XAMPP, WAMP, or another Apache/PHP/MySQL stack
+- PHP 8.x
+- MySQL 5.7+ or MariaDB 10.x
+- Apache `mod_rewrite` enabled
+- Git for cloning and updates
 
-https://github.com/PuneethReddyHC/event-management
+### Steps
 
-##  If you like my project hit a star button
+1. Clone the repository:
 
+```bash
+git clone https://github.com/Archie-ctr/Liberia-Shop.git
+cd Liberia-Shop
+```
 
+2. Place the project inside your local web-server directory:
 
-# Screenshots
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/adduser.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/adminproductadd.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/manageuser.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/manageuseradmin.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/productlistadmin.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/productlist.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/cartpage.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/homepage.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/loginmodal.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/mainpage.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/productpage.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/productzoom.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/registermodal.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/searchfilter.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/searchpage.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/store.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/storepage.png)
-![Image of adduser](https://github.com/PuneethReddyHC/online-shopping-with-advanced-admin-page/blob/master/screenshot/storepage1.png)
+```text
+C:\xampp\htdocs\OnlineShop
+```
 
+3. Start Apache and MySQL/MariaDB.
 
+4. Create a database named `onlineshop` in phpMyAdmin.
 
+5. Import the current production/local SQL database through phpMyAdmin. Do not commit database dumps or backups to the repository.
 
+6. Confirm the local database settings in `db.php`:
 
+```php
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'onlineshop';
+```
+
+7. Open the local site:
+
+```text
+http://localhost/OnlineShop/
+```
+
+## Production Configuration
+
+The production database connection should not contain database credentials in source control. Configure the following server values through hosting environment variables or the hosting control panel, when supported:
+
+```text
+DB_HOST=your_mysql_host
+DB_USER=your_mysql_username
+DB_PASSWORD=your_mysql_password
+DB_NAME=your_mysql_database
+```
+
+Also upload the project contents to the hosting document root, keeping these files and folders at the site root:
+
+```text
+.htaccess
+index.php
+admin/
+css/
+js/
+img/
+product_images/
+footer.php
+header.php
+db.php
+```
+
+For InfinityFree, use the exact database hostname, username, and database name supplied by the hosting control panel. Avoid publishing credentials in the repository or public documentation.
+
+The live website is:
+
+https://lib-onlineshop.gt.tc
+
+## URL Routing
+
+The application supports extension-free routes while preserving POST forms.
+
+Examples:
+
+```text
+/index.php     -> /
+/store.php     -> /store
+/product.php   -> /product?product_id=1
+/faq.php       -> /faq
+/admin/login.php -> /admin/login
+```
+
+Footer links, category links, and information pages use deployment-aware paths so they work locally and on the live domain.
+
+## Database and Backups
+
+The system uses these main functional areas:
+
+- `products`, `categories`, and `brands` for catalog data
+- `product_images` for multiple product-gallery images
+- `orders_info` and `order_products` for online and POS orders
+- `payments` and payment transaction tables for payment records
+- `inventory_logs` for stock movements
+- `admin_info` for administrators and staff
+- `user_info` for customers
+- `cart` and `wishlist` for customer shopping state
+- `shop_settings`, `shipping_settings`, `tax_settings`, and payment settings for configuration
+- `staff_reports` calculations based on staff-attributed sales and confirmations
+
+Database dumps and SQL backup files should remain private and are intentionally excluded through `.gitignore`.
+
+## Security Recommendations
+
+Before public deployment, complete the following:
+
+1. Use strong, unique administrator and staff passwords.
+2. Rotate any credentials that have previously been shared in chat, screenshots, SQL dumps, or source control.
+3. Store production credentials outside tracked source code.
+4. Replace legacy MD5 administrator-password compatibility with modern PHP password hashing where applicable.
+5. Restrict restore, staff, backup, settings, and report actions to authorized roles.
+6. Keep database backups outside public document folders.
+7. Enable HTTPS and set secure session cookies on the production host.
+8. Review server uploads for file-type, size, and name restrictions.
+
+## Running Checks
+
+Run PHP syntax validation:
+
+```bash
+php -l db.php
+php -l index.php
+php -l admin/admin/index.php
+```
+
+Validate the local site:
+
+```text
+http://localhost/OnlineShop/
+http://localhost/OnlineShop/store.php
+http://localhost/OnlineShop/admin/login.php
+```
+
+For production, verify storefront navigation, login, registration, checkout, product gallery, POS sale, inventory reduction, invoice PDF download, payment recording, staff reports, backup access, mobile layout, and footer information links.
+
+## Deployment Checklist
+
+- [x] Responsive storefront and administration interface
+- [x] Clean URL routing
+- [x] Multi-image product galleries
+- [x] Customer accounts and cart
+- [x] POS in-person sales
+- [x] Staff reporting and CSV export
+- [x] Invoice/PDF support
+- [x] Payment synchronization
+- [x] Backup and restore tools
+- [x] Database credentials excluded from Git
+- [ ] Run a production database import after final schema review
+- [ ] Confirm production database environment variables with the host
+- [ ] Rotate every previously exposed credential
+- [ ] Perform final live payment and login testing
+
+## License
+
+See the [LICENSE](LICENSE) file for licensing terms.
+
+## Author
+
+**Archie K Gonwoe Jr**  
+Online shop developer and system administrator  
+Email: archiekgonwoe@gmail.com  
+GitHub: https://github.com/Archie-ctr
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
+Issues and pull requests are welcome. For major architectural, database, payment, or security changes, open an issue first to discuss the proposed change.
+
+Please use private credentials, create a database backup, and test migrations locally before submitting a production change.
